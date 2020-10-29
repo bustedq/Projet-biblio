@@ -25,13 +25,17 @@ include "../../includes/functions.php";
       </form>';
             try{
 
-              $sth = $dbco->prepare("select distinct genre FROM livre");
+              $sth = $dbco->prepare("SELECT distinct genre FROM livre,publier where livre.id_livre=publier.id_livree");
                               $sth->execute();
               				$listeGenres= $sth->fetchAll(PDO::FETCH_ASSOC);
 
               			foreach ($listeGenres as $grow => $genre) {
 
-              			echo $genre["genre"];
+              			echo '<div class="page-header">';
+						echo '<h1>';
+						echo $genre["genre"];
+						echo '</h1>';
+						echo '</div>';
               			echo "<div class='container'> <div class='row'>";
                 /*Sélectionne les valeurs dans les colonnes prenom et mail de la table
                  *users pour chaque entrée de la table*/
