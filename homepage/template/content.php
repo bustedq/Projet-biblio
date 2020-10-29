@@ -9,8 +9,9 @@
 
 <?php
 
-    include "/Applications/XAMPP/xamppfiles/htdocs/TP-WEB/includes/database.php";
-    include "/Applications/XAMPP/xamppfiles/htdocs/TP-WEB/includes/functions.php";
+include "../../includes/database.php";
+include "../../includes/functions.php";
+
 
     echo '  <form action="search" method="get" class="form-inline">
         <div class="input-group">
@@ -51,7 +52,7 @@
 
         echo '<div class="col-4">';
         echo '<div class="card livrecard border border-primary">';
-        echo '<img class="card-img-top" src="../uploads/'.$livre['logo'].'>';
+        echo '<img class="card-img-top" src="../../uploads/'.$livre['logo'].'">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">'.$livre['titre'].'</h5>';
         echo '<p class="card-text">'.$livre['genre'].'</p>';
