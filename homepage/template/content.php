@@ -25,7 +25,7 @@ include "../../includes/functions.php";
       </form>';
             try{
 
-              $sth = $dbco->prepare("SELECT distinct genre FROM livre,publier where livre.id_livre=publier.id_livree");
+              $sth = $dbco->prepare("SELECT distinct genre FROM livre,publier where livre.id_livre=publier.id_livre");
                               $sth->execute();
               				$listeGenres= $sth->fetchAll(PDO::FETCH_ASSOC);
 
